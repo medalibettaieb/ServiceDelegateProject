@@ -6,6 +6,10 @@ import javax.persistence.Entity;
 @Entity
 public class Admin extends User implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7206440470618015491L;
 	private int adminLevel;
 	
 	public Admin() {

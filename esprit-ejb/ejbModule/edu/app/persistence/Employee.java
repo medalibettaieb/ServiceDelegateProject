@@ -8,6 +8,10 @@ import javax.persistence.Entity;
 public class Employee extends User implements Serializable{
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3883095068717838819L;
 	private String firstname;
 	private String lastname;
 	
