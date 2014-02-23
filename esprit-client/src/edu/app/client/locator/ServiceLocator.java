@@ -8,15 +8,15 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 public class ServiceLocator {
-	
+
 	private Context context;
 	private Map<String, Object> cache;
-	
+
 	private static ServiceLocator instance;
-	
+
 	private ServiceLocator() {
 		cache = new HashMap<String, Object>();
-		
+
 		try {
 			context = new InitialContext();
 		} catch (NamingException e) {
@@ -30,10 +30,10 @@ public class ServiceLocator {
 		}
 		return instance;
 	}
-	
-	public synchronized Object getProxy(String jndiName){
+
+	public synchronized Object getProxy(String jndiName) {
 		Object proxy = null;
-		
+
 		proxy = cache.get(jndiName);
 		if (proxy == null) {
 			try {
@@ -45,7 +45,5 @@ public class ServiceLocator {
 		}
 		return proxy;
 	}
-	
-	
 
 }
